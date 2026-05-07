@@ -23,12 +23,9 @@ function App() {
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
       />
-      <main>
+      {/* <main>
         <Gallery activeCategory={activeCategory} />
-      </main>
-      <footer className="footer">
-        <p>© 2026 আমাদের ক্লাব | স্মৃতি চিরন্তন</p>
-      </footer>
+      </main>       */}
     </div>
   );
 }

@@ -4,7 +4,7 @@ const GITHUB_USERNAME = 'Tanjim-joy';
 const REPO_NAME = 'club-gallery-images';
 const BASE_URL = `https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/photos`;
 
-export const fetchPhots = async (folder = '') => {
+export const fetchPhotos = async (folder = '') => {
   try {
     const url = folder ? `${BASE_URL}/${folder}` : BASE_URL;
     const response = await axios.get(url);
