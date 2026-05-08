@@ -11,10 +11,14 @@ function App() {
   useEffect(() => {
     const loadCategories = async () => {
       const folders = await fetchFolders();
+      // console.log('Folders:', folders);
       setCategories(folders);
+      if (!activeCategory && folders.length > 0) {
+        setActiveCategory(folders[0].name);
+      }
     };
     loadCategories();
-  }, []);
+  }, [activeCategory]);
 
   return (
     <div className="app">
