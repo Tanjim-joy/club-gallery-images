@@ -30,6 +30,9 @@ function App() {
       {/* <main>
         <Gallery activeCategory={activeCategory} />
       </main>       */}
+      {/* <PhotoCard /> */}
+      <Gallery />
+
     </div>
   );
 }

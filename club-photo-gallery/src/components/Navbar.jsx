@@ -2,9 +2,8 @@ import { motion } from 'framer-motion';
 import { FaCamera, FaBars, FaTimes } from 'react-icons/fa';
 import { useState } from 'react';
 
-const Navbar = ({ onCategoryChange, categories, activeCategory }) => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // console.log(categories);
   return (
     <motion.nav
       initial={{ y: -80 }}
@@ -32,13 +31,12 @@ const Navbar = ({ onCategoryChange, categories, activeCategory }) => {
           alignItems: 'center',
         }}
       >
-        <div
-          style={{ display: 'flex', alignItems: 'center', gap: 10 }}
-        >
+        {/* বাম পাশের অংশ: Logo + Title */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <div
             style={{
-              width: 80,
-              height: 80,
+              width: 50,
+              height: 50,
               borderRadius: 12,
               background: 'linear-gradient(135deg, #6366f1, #a855f7)',
               display: 'flex',
@@ -62,34 +60,27 @@ const Navbar = ({ onCategoryChange, categories, activeCategory }) => {
             Club Photo Gallery
           </span>
         </div>
-        <div style={{ display: 'flex', gap: 28 }}>
-          {categories.map((cata) => (
-            <button
-              key={cata.name}
-              onClick={() => {
-                onCategoryChange(cata.name);
-              }}
-              style={{
-                background: 'transparent',
-                border: 'none',
-                color:
-                  activeCategory === cata.name
-                    ? '#ffff'
-                    : 'rgba(255,255,255,0.7)',
-                fontSize: 14,
-                fontWeight: 800,
-                cursor: 'pointer',
-                transition: 'all 0.4s',
-                borderBottom:
-                  activeCategory === cata.name
-                    ? '2px solid #6366f1'
-                    : '2px solid transparent',
-                paddingBottom: '4px',
-              }}
-            >
-              {cata.name}
-            </button>
-          ))}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 20,
+        }}>
+          <div style={{
+            height: 30,
+            width: 1,
+            background: 'linear-gradient(to bottom, transparent, rgba(255,255,255,0.3), transparent)',
+          }} />
+          <h2 style={{
+            fontSize: "clamp(1rem, 2.5vw, 1.5rem)",
+            fontWeight: 400,
+            color: "#a855f7",
+            textAlign: "right",
+            letterSpacing: "-0.02em",
+            fontStyle: "italic",
+            margin: 0,
+          }}>
+            ✨ প্রতিটি মুহূর্ত বিশেষ
+          </h2>
         </div>
       </div>
     </motion.nav>
