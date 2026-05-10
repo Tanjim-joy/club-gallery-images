@@ -5,6 +5,13 @@ const PhotoCard = ({ photo, onClick }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isHovered, setIsHovered] = useState(false); 
 
+  // JsDeliver URL 
+  const getImgUrl = () => {
+    const filePath = photo.path;
+
+    return `https://cdn.jsdelivr.net/gh/Tanjim-joy/club-gallery-images@main/${filePath}`;
+  };
+
   return (
     <motion.div
       whileHover={{ scale: 1.03 }}
@@ -41,7 +48,7 @@ const PhotoCard = ({ photo, onClick }) => {
 
       {/* ================== IMAGE ================== */}
       <img
-        src={photo.download_url}
+        src={getImgUrl()}
         alt={photo.name}
         onLoad={() => setIsLoaded(true)}
         onError={() => setIsLoaded(true)}

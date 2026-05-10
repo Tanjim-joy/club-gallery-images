@@ -43,7 +43,6 @@ const Gallery = () => {
           category: 'Root',
         }));
         allPhotos = [...rootWithCategory];
-
         // Folder images
         for (const folder of folderData) {
           const folderPhotos = await fetchPhotos(folder.name);
