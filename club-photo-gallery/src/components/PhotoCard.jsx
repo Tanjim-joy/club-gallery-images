@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const PhotoCard = ({ photo, onClick }) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false); 
 
   return (
     <motion.div
